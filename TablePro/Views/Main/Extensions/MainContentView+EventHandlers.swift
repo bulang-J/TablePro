@@ -99,12 +99,10 @@ extension MainContentView {
     ) {
         let action = TableSelectionAction.resolve(oldTables: oldTables, newTables: newTables)
 
-        guard case .navigate(let tableName, let isView) = action else {
+        guard case .navigate(let table) = action else {
             return
         }
 
-        // Only navigate when this is the focused window.
-        // Prevents feedback loops when shared sidebar state syncs across native tabs.
         guard coordinator.isKeyWindow else {
             return
         }
@@ -113,7 +111,7 @@ extension MainContentView {
         let hasPreview = WindowLifecycleMonitor.shared.previewWindow(for: connection.id) != nil
 
         let result = SidebarNavigationResult.resolve(
-            clickedTableName: tableName,
+            clickedTableName: table.name,
             currentTabTableName: tabManager.selectedTab?.tableContext.tableName,
             hasExistingTabs: !tabManager.tabs.isEmpty,
             isPreviewTabMode: isPreviewMode,
@@ -125,11 +123,9 @@ extension MainContentView {
             return
         case .openInPlace:
             coordinator.selectionState.indices = []
-            coordinator.openTableTab(tableName, isView: isView)
-        case .revertAndOpenNewWindow:
-            coordinator.openTableTab(tableName, isView: isView)
-        case .replacePreviewTab, .openNewPreviewTab:
-            coordinator.openTableTab(tableName, isView: isView)
+            coordinator.openTableTab(table)
+        case .revertAndOpenNewWindow, .replacePreviewTab, .openNewPreviewTab:
+            coordinator.openTableTab(table)
         }
     }
 

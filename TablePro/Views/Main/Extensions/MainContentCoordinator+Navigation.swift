@@ -15,6 +15,15 @@ private let navigationLogger = Logger(subsystem: "com.TablePro", category: "Main
 extension MainContentCoordinator {
     // MARK: - Table Tab Opening
 
+    func openTableTab(_ table: TableInfo, showStructure: Bool = false) {
+        openTableTab(
+            table.name,
+            schema: table.schema,
+            showStructure: showStructure,
+            isView: table.type == .view
+        )
+    }
+
     func openTableTab(_ tableName: String, schema: String? = nil, showStructure: Bool = false, isView: Bool = false) {
         let navigationModel = PluginMetadataRegistry.shared.snapshot(
             forTypeId: connection.type.pluginTypeId
@@ -30,8 +39,7 @@ extension MainContentCoordinator {
             currentDatabase = activeDatabaseName
         }
 
-        let connectionSchema = DatabaseManager.shared.session(for: connectionId)?.currentSchema
-        let resolvedSchema = schema ?? connectionSchema
+        let resolvedSchema = schema
 
         // Fast path: if this table is already the active tab in the same database, skip all work
         if let current = tabManager.selectedTab,
@@ -468,12 +476,8 @@ extension MainContentCoordinator {
             tabSessionRegistry.removeAll()
             tabManager.tabs = []
             tabManager.selectedTabId = nil
-            await SchemaService.shared.invalidate(connectionId: connectionId)
-
-            await refreshTables()
         } catch {
             toolbarState.currentSchema = previousSchema
-            await refreshTables()
 
             navigationLogger.error("Failed to switch schema: \(error.localizedDescription, privacy: .public)")
             AlertHelper.showErrorSheet(

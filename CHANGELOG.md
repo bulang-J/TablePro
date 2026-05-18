@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.43.0] - 2026-05-18
+
 ### Added
 
 - Import connections from Beekeeper Studio, including encrypted passwords and SSH bastion hosts
@@ -1886,7 +1888,8 @@ TablePro is a native macOS database client built with SwiftUI and AppKit, design
     - Custom SQL query templates
     - Performance optimized for large datasets
 
-[Unreleased]: https://github.com/TableProApp/TablePro/compare/v0.42.0...HEAD
+[Unreleased]: https://github.com/TableProApp/TablePro/compare/v0.43.0...HEAD
+[0.43.0]: https://github.com/TableProApp/TablePro/compare/v0.42.0...v0.43.0
 [0.42.0]: https://github.com/TableProApp/TablePro/compare/v0.41.0...v0.42.0
 [0.41.0]: https://github.com/TableProApp/TablePro/compare/v0.40.3...v0.41.0
 [0.40.3]: https://github.com/TableProApp/TablePro/compare/v0.40.2...v0.40.3

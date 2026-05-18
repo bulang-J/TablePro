@@ -15,8 +15,8 @@
 
 import AppKit
 import Foundation
-import SQLite3
 import os
+import SQLite3
 import TableProPluginKit
 
 struct BeekeeperStudioImporter: ForeignAppImporter {
@@ -148,15 +148,15 @@ struct BeekeeperStudioImporter: ForeignAppImporter {
 
     private static func defaultPort(for type: String) -> Int {
         switch type {
-        case "MySQL", "MariaDB": return 3306
-        case "PostgreSQL", "Redshift": return 5432
-        case "CockroachDB": return 26257
-        case "SQL Server": return 1433
-        case "Oracle": return 1521
-        case "MongoDB": return 27017
-        case "Redis": return 6379
-        case "Cassandra": return 9042
-        case "ClickHouse": return 8123
+        case "MySQL", "MariaDB": return 3_306
+        case "PostgreSQL", "Redshift": return 5_432
+        case "CockroachDB": return 26_257
+        case "SQL Server": return 1_433
+        case "Oracle": return 1_521
+        case "MongoDB": return 27_017
+        case "Redis": return 6_379
+        case "Cassandra": return 9_042
+        case "ClickHouse": return 8_123
         default: return 0
         }
     }

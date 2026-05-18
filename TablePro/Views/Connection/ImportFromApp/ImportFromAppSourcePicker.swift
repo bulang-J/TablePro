@@ -171,5 +171,4 @@ struct ImportFromAppSourcePicker: View {
               state.available else { return }
         onSelect(state.importer, includePasswords)
     }
-
 }

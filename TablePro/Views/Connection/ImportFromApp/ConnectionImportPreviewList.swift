@@ -112,5 +112,4 @@ struct ConnectionImportPreviewList: View {
                 .foregroundStyle(.orange)
         }
     }
-
 }

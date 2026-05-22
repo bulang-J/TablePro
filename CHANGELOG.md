@@ -7,27 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.44.0] - 2026-05-23
+
 ### Added
 
 - Import connections and passwords from DataGrip, including SSH tunnels and SSL settings. The source app doesn't need to be running. (#1374)
 
 ### Changed
 
-- Active Connections is now a searchable popover anchored to the toolbar that closes on Escape or clicking outside, instead of a modal dialog. (#1350)
+- Active Connections is now a searchable toolbar popover instead of a modal dialog. (#1350)
 
 ### Fixed
 
-- Connecting to a PostgreSQL-compatible engine that doesn't implement the pg_matviews catalog (such as db9.ai) no longer fails to load tables. (#1383)
-- Filtering a table now updates the row count and page count in the bottom-right to match the filtered result, instead of showing the whole-table totals.
-- Reopening a table now restores the filter you had applied. Removing or clearing a filter takes effect right away and is remembered, so a table you unfiltered reopens with no filter. Filters are remembered per connection. (#1347)
-- Quick switcher panel height now fits its results instead of leaving a large empty area below short lists. (#1349)
-- Importing connections from TablePlus brings over saved passwords again. A recent release looked under the wrong keychain name, so connections imported with no passwords and no warning.
-- Importing an SSH connection from TablePlus no longer fills in a fake private key path such as `~/.ssh/Import a private key...` when no key was selected. Empty TLS certificate paths are skipped too.
-- Importing from DBeaver no longer shows an unnecessary keychain permission warning. DBeaver stores passwords in its own file, so macOS never prompts.
-- Raw SQL filter now suggests columns and keywords at every position in the expression, including after AND and OR, instead of only the first column. (#1346)
-- Plugins left incompatible after a TablePro update now update quietly in the background instead of showing a premature "could not be loaded" alert. You are only notified when no compatible version exists yet, and the message tells you what to do. (#1322)
+- Connecting to a PostgreSQL-compatible engine without the pg_matviews catalog (such as db9.ai) no longer fails to load tables. (#1383)
+- Filtering a table now updates the row and page counts to match the filtered result, instead of the whole-table totals.
+- Reopening a table restores the filter you had applied, per connection. Removing or clearing a filter is remembered too, so an unfiltered table reopens with no filter. (#1347)
+- Quick switcher panel height now fits its results instead of leaving empty space below short lists. (#1349)
+- Importing connections from TablePlus brings over saved passwords again, after a recent release looked under the wrong keychain name.
+- Importing an SSH connection from TablePlus no longer fills in a fake private key path when no key was selected, and skips empty TLS certificate paths.
+- Importing from DBeaver no longer shows an unnecessary keychain permission warning, since DBeaver stores passwords in its own file.
+- Raw SQL filter now suggests columns and keywords at every position, including after AND and OR, instead of only the first. (#1346)
+- Plugins left incompatible after a TablePro update now update quietly in the background instead of showing a premature "could not be loaded" alert. You are notified only when no compatible version exists yet. (#1322)
 - A plugin you download and install by hand is no longer blocked by macOS Gatekeeper once its signature is verified. (#1322)
-- Clicking a table now reliably replaces the active tab instead of opening a new tab once you have more than one tab open. A new tab still opens when the current tab has unsaved edits, an applied filter, or sorting. Double-click to open a table in its own tab. (#1348)
+- Clicking a table now replaces the active tab instead of opening a new one when you have multiple tabs open. A new tab still opens for unsaved edits, an applied filter, or sorting; double-click always opens a new tab. (#1348)
 
 ## [0.43.3] - 2026-05-22
 
@@ -1971,7 +1973,8 @@ TablePro is a native macOS database client built with SwiftUI and AppKit, design
     - Custom SQL query templates
     - Performance optimized for large datasets
 
-[Unreleased]: https://github.com/TableProApp/TablePro/compare/v0.43.3...HEAD
+[Unreleased]: https://github.com/TableProApp/TablePro/compare/v0.44.0...HEAD
+[0.44.0]: https://github.com/TableProApp/TablePro/compare/v0.43.3...v0.44.0
 [0.43.3]: https://github.com/TableProApp/TablePro/compare/v0.43.2...v0.43.3
 [0.43.2]: https://github.com/TableProApp/TablePro/compare/v0.43.1...v0.43.2
 [0.43.1]: https://github.com/TableProApp/TablePro/compare/v0.43.0...v0.43.1

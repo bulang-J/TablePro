@@ -1316,15 +1316,8 @@
         }
       }
     },
-    "%@ was not found on this system. Install it with `brew install libpq` and link it, or set a custom path under Settings > Terminal > CLI Paths > %@." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ was not found on this system. Install it with `brew install libpq` and link it, or set a custom path under Settings > Terminal > CLI Paths > %2$@."
-          }
-        }
-      }
+    "%@ was not found on this system. Install it with `brew install libpq` and link it." : {
+
     },
     "%@, %@" : {
       "localizations" : {
@@ -3605,6 +3598,9 @@
           }
         }
       }
+    },
+    "A newer version of TablePro is required for this plugin. Update TablePro to keep using it." : {
+
     },
     "A sync conflict was detected and needs to be resolved." : {
       "localizations" : {
@@ -7513,6 +7509,7 @@
       }
     },
     "Bar" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -7629,6 +7626,7 @@
       }
     },
     "Block" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -9511,6 +9509,7 @@
       }
     },
     "CLI Paths" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -9533,6 +9532,7 @@
       }
     },
     "CLI tool \"%@\" not found in PATH" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -13707,6 +13707,7 @@
       }
     },
     "Cursor blink" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -13786,6 +13787,7 @@
       }
     },
     "Cursor style:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -16303,6 +16305,7 @@
       }
     },
     "Display" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -20197,6 +20200,7 @@
       }
     },
     "Failed to create terminal process (errno: %d)" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -22161,6 +22165,7 @@
       }
     },
     "Font size:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -22183,6 +22188,7 @@
       }
     },
     "Font:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -25056,6 +25062,7 @@
       }
     },
     "Install the CLI client for %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -28947,6 +28954,9 @@
         }
       }
     },
+    "Modifier Key Required" : {
+
+    },
     "MongoDB" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -30332,6 +30342,12 @@
         }
       }
     },
+    "No compatible build is available yet. This plugin will update automatically once one is published." : {
+
+    },
+    "No connections" : {
+
+    },
     "No Connections" : {
       "localizations" : {
         "tr" : {
@@ -30397,6 +30413,9 @@
           }
         }
       }
+    },
+    "No connections match “%@”" : {
+
     },
     "No connections yet" : {
       "extractionState" : "stale",
@@ -31629,6 +31648,7 @@
       }
     },
     "No values found" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -33085,6 +33105,7 @@
 
     },
     "Open Terminal" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -33272,6 +33293,7 @@
       }
     },
     "Option as Meta key" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -33471,6 +33493,7 @@
 
     },
     "Override auto-detected CLI paths per database type." : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -34765,7 +34788,18 @@
         }
       }
     },
+    "Plugin was built for PluginKit version %d; this release of TablePro needs version %d." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Plugin was built for PluginKit version %1$d; this release of TablePro needs version %2$d."
+          }
+        }
+      }
+    },
     "Plugin was built with PluginKit version %d, but version %d is required. Please update the plugin." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -37432,6 +37466,7 @@
 
     },
     "Reconnect" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -40626,6 +40661,7 @@
 
     },
     "Scrollback lines:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -43920,6 +43956,7 @@
       }
     },
     "sqlite3 is included with macOS" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -44324,6 +44361,7 @@
       }
     },
     "SSH tunnel did not connect within 30 seconds" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -46320,6 +46358,9 @@
         }
       }
     },
+    "TablePro couldn't reach the plugin registry to update this plugin. Check your connection and reopen TablePro." : {
+
+    },
     "TablePro Website" : {
       "localizations" : {
         "tr" : {
@@ -46573,6 +46614,7 @@
       }
     },
     "Terminal" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -46595,6 +46637,7 @@
       }
     },
     "Terminal bell" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -46617,6 +46660,7 @@
       }
     },
     "Terminal Unavailable" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -47313,6 +47357,7 @@
       }
     },
     "Theme" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -47338,6 +47383,7 @@
 
     },
     "Theme:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -47380,6 +47426,9 @@
           }
         }
       }
+    },
+    "This action needs a modifier key like ⌘ or ⌥. A plain key won't reach the menu reliably." : {
+
     },
     "This connection was deleted on another device or window. Your changes were not saved." : {
 
@@ -47900,6 +47949,9 @@
           }
         }
       }
+    },
+    "This plugin is not in the registry, so it can't be updated automatically." : {
+
     },
     "This plugin requires TablePro %@ or later" : {
       "localizations" : {
@@ -49761,6 +49813,7 @@
 
     },
     "Underline" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -50574,6 +50627,9 @@
         }
       }
     },
+    "Updating this plugin didn't finish. TablePro will try again the next time it launches." : {
+
+    },
     "Updating..." : {
       "localizations" : {
         "tr" : {
@@ -51147,6 +51203,7 @@
       }
     },
     "Value excluded from query" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {

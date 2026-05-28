@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Rectangular cell selection in the data grid. Click and drag to select a range, Shift+click to extend, Cmd+click to add cells, Cmd+click a column header to select the column, Shift+Arrow to extend by one cell, Cmd+A to select the whole grid, Cmd+C to copy as TSV. (#1446)
 - BigQuery datasets show as expandable nodes in the sidebar, instead of one at a time behind a picker.
 - OpenCode Zen as an AI provider, with free models when no key is set. (#1400)
 - Oracle Database 11g (11.1 and 11.2) now connects. (#1425)

@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - BigQuery: switching to another table now loads its data right away, instead of leaving the grid empty until you close and reopen the tab.
 - Custom and OpenAI-compatible AI providers now work when the base URL already ends in `/v1`, instead of building a doubled `/v1/v1/` path that failed. (#1400)
 - MongoDB: opening a collection no longer crashes when a document contains a NaN or infinite number. (#1418)
+- After updating TablePro, connecting to a database whose plugin is still updating in the background now waits for that update to finish instead of wrongly showing "Plugin Not Installed", so you no longer have to quit and reopen the app. When no compatible plugin build exists yet, the message now tells you to update TablePro. (#1380)
 - Opening a saved connection that fails now shows the detailed troubleshooting dialog with suggested fixes, the same one Test Connection shows, instead of a generic error alert. (#1425, #483)
 - Oracle connection errors no longer surface the driver's raw internal message; failures now explain the cause in plain language. (#483)
 - AWS IAM authentication with a named profile now reads `~/.aws/config` (not just `~/.aws/credentials`) and supports `credential_process`, so profiles backed by SSO, IAM Identity Center, or assume-role work through `aws configure export-credentials`. (#1291)

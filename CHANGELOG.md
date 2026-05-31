@@ -74,6 +74,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Safe mode level changes in the toolbar persist as the connection default across reconnects.
 - Toolbar customizations persist after closing and reopening a session window. (#1455)
 - Pasting rows with commas in a cell keeps each value in its own column and preserves NULL vs the literal text "NULL".
 - BigQuery: switching to another table loads its data immediately instead of leaving the grid empty.

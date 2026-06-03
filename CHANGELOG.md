@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Importing connections from other apps now detects duplicates by host, port, database, and username, and lets you replace, add a copy, or skip each one before import.
 - Oracle connections negotiate Native Network Encryption when the server asks for it, so servers with `SQLNET.ENCRYPTION_SERVER` or `SQLNET.CRYPTO_CHECKSUM_SERVER` set to REQUIRED now connect (AES with a SHA crypto-checksum), matching what SQL Developer and DBeaver do. (#483)
 - Oracle connections follow listener redirects, so RAC SCAN listeners, shared server, and load-balanced setups now connect instead of failing during the handshake. (#483)
+- AWS connections can assume an IAM role: profiles with `role_arn` plus `source_profile` (or `credential_source = Environment`) are resolved through STS AssumeRole, including chained source profiles, `external_id`, and `duration_seconds`. (#1567)
+- Redis connects to Amazon ElastiCache with IAM auth (access key, profile, or SSO). TablePro generates the IAM token and uses it as the password; set the AWS region and cache name and enable TLS. (#1567)
+- AWS SSO connections can sign in from TablePro: when the SSO session has expired, a prompt opens the AWS sign-in page in your browser and refreshes the cached token. (#1567)
+- Cassandra connects to Amazon Keyspaces with AWS IAM (SigV4) auth, using access keys, a profile, or SSO. Set Authentication to an AWS IAM mode and the region, and enable TLS. (#1567)
 
 ### Changed
 
@@ -23,9 +27,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Cmd+N now opens a new connection; Manage Connections keeps its File menu item.
 - First Page and Last Page now default to Cmd+Option+Up and Cmd+Option+Down.
 - Shortcuts can be bound to function keys (F1 through F12), with or without a modifier.
+- AWS connections show a dropdown of the profiles found in `~/.aws/config` and `~/.aws/credentials`, and still accept a typed profile name. (#1567)
 
 ### Fixed
 
+- DynamoDB AWS Profile auth now reads `~/.aws/config` as well as `~/.aws/credentials` and supports `credential_process`, matching the AWS CLI. Profiles defined only in `~/.aws/config`, including SSO and credential-process profiles, no longer fail with "profile not found". (#1567)
 - Query result columns now follow the order in the SELECT. Adding or removing a column no longer leaves new columns stuck at the end of the grid. (#1565)
 - JSON file import works again. It failed to load in 0.48.0.
 - SQL export quotes empty or malformed values in numeric columns instead of writing them unquoted, which could produce invalid INSERT statements.

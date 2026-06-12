@@ -773,6 +773,11 @@ struct TableProApp: App {
         Task {
             await QueryHistoryManager.shared.performStartupCleanup()
         }
+
+        Task { @MainActor in
+            let activeIds = Set(ConnectionStorage.shared.loadConnections().map(\.id))
+            await SQLFavoriteManager.shared.pruneOrphaned(activeConnectionIds: activeIds)
+        }
     }
 
     var body: some Scene {

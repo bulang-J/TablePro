@@ -53,6 +53,7 @@ struct DatabaseTreeView: View {
     @Binding var pendingTruncates: Set<String>
     @Binding var pendingDeletes: Set<String>
     let coordinator: MainContentCoordinator?
+    let sidebarState: SharedSidebarState
 
     @State private var localSelection: Set<DatabaseTreeTableRef> = []
     @State private var searchText: String = ""
@@ -104,6 +105,8 @@ struct DatabaseTreeView: View {
                 errorState(message: message)
             case .loaded where databases.isEmpty:
                 emptyDatabasesState
+            case .loaded where isFilterHidingEverything:
+                filteredEmptyState
             case .loaded:
                 treeList
             case .idle, .loading:
@@ -317,6 +320,24 @@ struct DatabaseTreeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
+    private var isFilterHidingEverything: Bool {
+        DatabaseTreeVisibility.isFiltering(selected: sidebarState.databaseFilterSelected)
+            && filteredDatabases.isEmpty
+    }
+
+    private var filteredEmptyState: some View {
+        ContentUnavailableView {
+            Label(String(localized: "No Databases Shown"), systemImage: "line.3.horizontal.decrease.circle")
+        } description: {
+            Text("The database filter hides every database on this connection.")
+        } actions: {
+            Button(String(localized: "Show All")) {
+                sidebarState.databaseFilterSelected = []
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
     private func loadingRow(_ text: String) -> some View {
         HStack(spacing: 8) {
             ProgressView()
@@ -434,9 +455,12 @@ struct DatabaseTreeView: View {
         treeService.routines(connectionId: connectionId, database: database, schema: schema)
     }
 
+    private var filteredDatabases: [DatabaseMetadata] {
+        DatabaseTreeVisibility.visible(databases: databases, selected: sidebarState.databaseFilterSelected)
+    }
+
     private var visibleDatabases: [DatabaseMetadata] {
-        let nonSystem = databases.filter { !$0.isSystemDatabase }
-        let matched = searchText.isEmpty ? nonSystem : nonSystem.filter { databaseMatchesSearch($0) }
+        let matched = searchText.isEmpty ? filteredDatabases : filteredDatabases.filter { databaseMatchesSearch($0) }
         var seen = Set<String>()
         return matched.filter { seen.insert($0.id).inserted }
     }

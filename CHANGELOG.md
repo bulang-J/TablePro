@@ -37,8 +37,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The filter panel's "Unset" button is now "Clear". It keeps your filter rows and only drops the applied state. To remove the rows, use "Remove All Filters" in the filter options menu.
 - A row's right-click menu now has "Apply Only This Filter". The inline per-row Apply button is gone.
 
+### Changed
+
+- Expanding a database in the tree sidebar loads tables first and fills in procedures and functions in the background, so the table list appears after one round-trip instead of waiting for three queries to finish in sequence.
+
 ### Fixed
 
+- Expanding or collapsing a database or schema in the tree sidebar while its tables were still loading could crash the app. The tree now updates its rows without rebuilding the outline structure.
+- MongoDB filters on `_id` and other ObjectId fields now match. A 24-character hex value is matched as an ObjectId as well as a string, so filtering by `_id` returns the row instead of nothing. (#1682)
 - Shift+Arrow in the data grid now starts and extends a cell selection from the focused cell. Cmd+Shift+Arrow extends to the row or column edge.
 - Delete key now removes all rows covered by a cell-range selection instead of ignoring it.
 - Right-clicking inside a multi-row or cell-range selection no longer collapses the selection first.

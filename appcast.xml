@@ -3,6 +3,69 @@
     <channel>
         <title>TablePro</title>
         <item>
+            <title>0.52.1</title>
+            <pubDate>Sun, 21 Jun 2026 17:47:33 +0000</pubDate>
+            <sparkle:version>101</sparkle:version>
+            <sparkle:shortVersionString>0.52.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<h3>Added</h3>
+<ul>
+<li>Import connections on iPhone. Open a .tablepro file from Files or AirDrop, or use Import Connections in the list menu. Encrypted files prompt for the passphrase, and you choose how to handle duplicates.</li>
+<li>Export connections on iPhone from the list menu. Passwords are left out by default; include them by setting a passphrase that encrypts the file.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Drag-selecting many columns in a wide result set scrolls smoothly instead of lagging.</li>
+<li>The connection Export Options dialog keeps a steady size when you turn on Include Credentials, and saves through the standard macOS save dialog.</li>
+<li>Scrolling large result sets uses less CPU.</li>
+<li>Typing in the sidebar table search stays responsive on databases with thousands of tables.</li>
+<li>The welcome sidebar stays responsive with many connections and nested groups.</li>
+<li>Autocomplete stays snappy on wide SELECT clauses with hundreds of columns.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>SQL autocomplete no longer stops appearing until the app is relaunched; it stays available after switching query tabs and windows. (#1731)</li>
+<li>Oracle connections no longer crash the app when the server sends a message the driver cannot decode; the query fails with a clear error and reconnects. (#483)</li>
+<li>MongoDB TLS handshake failures now report the actual cause instead of always blaming a cipher or protocol mismatch. (#1418)</li>
+<li>The External Clients access level no longer reverts to Read Only after saving and reopening a connection, so MCP clients keep the write access you granted. (#1730)</li>
+<li>Typing fast with the autocomplete window open no longer stalls each keystroke.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/TableProApp/TablePro/releases/download/v0.52.1/TablePro-0.52.1-arm64.zip" length="28611372" type="application/octet-stream" sparkle:edSignature="4OmudyMEPPv/4KAOn+EUnbUNrZEH1XfKEeRI1eJfVs6wJXcA8QBmob5z5Qd6zZ2HdSIZCGxThSvSQHFBO6ciBg=="/>
+        </item>
+        <item>
+            <title>0.52.1</title>
+            <pubDate>Sun, 21 Jun 2026 17:47:34 +0000</pubDate>
+            <sparkle:version>101</sparkle:version>
+            <sparkle:shortVersionString>0.52.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>Added</h3>
+<ul>
+<li>Import connections on iPhone. Open a .tablepro file from Files or AirDrop, or use Import Connections in the list menu. Encrypted files prompt for the passphrase, and you choose how to handle duplicates.</li>
+<li>Export connections on iPhone from the list menu. Passwords are left out by default; include them by setting a passphrase that encrypts the file.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Drag-selecting many columns in a wide result set scrolls smoothly instead of lagging.</li>
+<li>The connection Export Options dialog keeps a steady size when you turn on Include Credentials, and saves through the standard macOS save dialog.</li>
+<li>Scrolling large result sets uses less CPU.</li>
+<li>Typing in the sidebar table search stays responsive on databases with thousands of tables.</li>
+<li>The welcome sidebar stays responsive with many connections and nested groups.</li>
+<li>Autocomplete stays snappy on wide SELECT clauses with hundreds of columns.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>SQL autocomplete no longer stops appearing until the app is relaunched; it stays available after switching query tabs and windows. (#1731)</li>
+<li>Oracle connections no longer crash the app when the server sends a message the driver cannot decode; the query fails with a clear error and reconnects. (#483)</li>
+<li>MongoDB TLS handshake failures now report the actual cause instead of always blaming a cipher or protocol mismatch. (#1418)</li>
+<li>The External Clients access level no longer reverts to Read Only after saving and reopening a connection, so MCP clients keep the write access you granted. (#1730)</li>
+<li>Typing fast with the autocomplete window open no longer stalls each keystroke.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/TableProApp/TablePro/releases/download/v0.52.1/TablePro-0.52.1-x86_64.zip" length="31439964" type="application/octet-stream" sparkle:edSignature="Rq9S0AIBT0i/1P1ZGaxngf7zLXqCI5M/fSGDgocKZMvDLHGlWCv5VSnDR0dc2kNr7XGueJW/pqnaAFOE/CTKBA=="/>
+        </item>
+        <item>
             <title>0.52.0</title>
             <pubDate>Thu, 18 Jun 2026 17:53:31 +0000</pubDate>
             <sparkle:version>100</sparkle:version>

@@ -7,27 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.52.1] - 2026-06-22
+
 ### Added
 
 - Import connections on iPhone. Open a .tablepro file from Files or AirDrop, or use Import Connections in the list menu. Encrypted files prompt for the passphrase, and you choose how to handle duplicates.
-- Export connections on iPhone from the list menu and share the .tablepro file. Passwords are left out by default; include them by setting a passphrase that encrypts the file.
+- Export connections on iPhone from the list menu. Passwords are left out by default; include them by setting a passphrase that encrypts the file.
 
 ### Changed
 
-- Drag-selecting many columns in a wide result set scrolls smoothly instead of lagging; the selection overlay and row highlight now look up column positions from a cache that refreshes when columns are added, removed, or reordered.
+- Drag-selecting many columns in a wide result set scrolls smoothly instead of lagging.
 - The connection Export Options dialog keeps a steady size when you turn on Include Credentials, and saves through the standard macOS save dialog.
-- Data grid now serves the row count from its existing cache instead of recomputing it on every layout pass, reducing CPU churn while scrolling large result sets.
-- Typing in the sidebar table search stays responsive on databases with thousands of tables; filtering runs after a short pause instead of on every keystroke.
-- The welcome sidebar rebuilds its connection tree in linear time, so favoriting, moving, or regrouping connections stays responsive with many connections and nested groups.
-- Autocomplete ranks each fuzzy candidate once per keystroke instead of three times, keeping the suggestion list snappy on wide SELECT clauses with hundreds of columns.
+- Scrolling large result sets uses less CPU.
+- Typing in the sidebar table search stays responsive on databases with thousands of tables.
+- The welcome sidebar stays responsive with many connections and nested groups.
+- Autocomplete stays snappy on wide SELECT clauses with hundreds of columns.
 
 ### Fixed
 
-- SQL autocomplete no longer stops appearing until the app is relaunched; the suggestion list stays available after switching query tabs and windows. (#1731)
-- Oracle connections no longer crash the app when the server sends a backend message the driver cannot decode; the query fails with a clear error and the connection reconnects. (#483)
+- SQL autocomplete no longer stops appearing until the app is relaunched; it stays available after switching query tabs and windows. (#1731)
+- Oracle connections no longer crash the app when the server sends a message the driver cannot decode; the query fails with a clear error and reconnects. (#483)
 - MongoDB TLS handshake failures now report the actual cause instead of always blaming a cipher or protocol mismatch. (#1418)
 - The External Clients access level no longer reverts to Read Only after saving and reopening a connection, so MCP clients keep the write access you granted. (#1730)
-- Typing fast with the autocomplete window open no longer stalls each keystroke; the live refilter is debounced, cancelable, and moved off the main thread.
+- Typing fast with the autocomplete window open no longer stalls each keystroke.
 
 ## [0.52.0] - 2026-06-19
 
@@ -2348,7 +2350,8 @@ TablePro is a native macOS database client built with SwiftUI and AppKit, design
     - Custom SQL query templates
     - Performance optimized for large datasets
 
-[Unreleased]: https://github.com/TableProApp/TablePro/compare/v0.52.0...HEAD
+[Unreleased]: https://github.com/TableProApp/TablePro/compare/v0.52.1...HEAD
+[0.52.1]: https://github.com/TableProApp/TablePro/compare/v0.52.0...v0.52.1
 [0.52.0]: https://github.com/TableProApp/TablePro/compare/v0.51.1...v0.52.0
 [0.51.1]: https://github.com/TableProApp/TablePro/compare/v0.51.0...v0.51.1
 [0.51.0]: https://github.com/TableProApp/TablePro/compare/v0.50.0...v0.51.0

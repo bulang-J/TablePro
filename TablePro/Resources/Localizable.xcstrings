@@ -67664,6 +67664,9 @@
         }
       }
     },
+    "Search and analytics engine" : {
+
+    },
     "Search columns..." : {
       "localizations" : {
         "tr" : {
@@ -71914,6 +71917,9 @@
           }
         }
       }
+    },
+    "Skip TLS Verification" : {
+
     },
     "Skips foreign key constraint checks for this operation" : {
       "localizations" : {

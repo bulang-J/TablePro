@@ -176,6 +176,7 @@ final class OracleConnectionWrapper: @unchecked Sendable {
         )
         config.nativeNetworkEncryption = nativeNetworkEncryption
         let connectConfig = config
+        let connectLogger = nioLogger
 
         let connectionId = Self.connectionCounter.withLock { state -> Int in
             state += 1
@@ -187,7 +188,7 @@ final class OracleConnectionWrapper: @unchecked Sendable {
                 try await OracleNIO.OracleConnection.connect(
                     configuration: connectConfig,
                     id: connectionId,
-                    logger: nioLogger
+                    logger: connectLogger
                 )
             }
 
@@ -258,6 +259,8 @@ final class OracleConnectionWrapper: @unchecked Sendable {
         case .connectionDropped:
             return .authConnectionDropped(phase: phase)
         case .connectionFailed:
+            return .connectionFailed
+        @unknown default:
             return .connectionFailed
         }
     }
